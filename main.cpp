@@ -59,7 +59,7 @@ void calculation_func_x(struct data *ptr)
     }
     for (size_t k = 1; k < ptr->N; k++)
     {
-        // std::cout<<table_value[k]<<std::endl;
+         std::cout<<table_value[k]<<std::endl;
         
     }
     for (size_t k = 0; k < ptr->N; k++)
