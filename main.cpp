@@ -51,27 +51,37 @@ void calculation_delta_N(struct data *ptr)
 
 void calculation_func_x(struct data *ptr)
 {   
-    float table_value[ptr->N];
-    for (size_t k = 1; k < ptr->N; k++)
+    float table_value[ptr->N+1];
+    for (size_t k = 1; k < ptr->N+1; k++)
     {
        table_value[k]=ptr->a+(k*((ptr->b-ptr->a)/(ptr->N+1)));
 
     }
-    for (size_t k = 1; k < ptr->N; k++)
+    for (size_t k = 1; k < ptr->N+1; k++)
     {
-         std::cout<<table_value[k]<<std::endl;
+        // std::cout<<table_value[k]<<std::endl;
         
     }
-    for (size_t k = 0; k < ptr->N; k++)
+    float result = 0.0;
+    float result_fx=0.0;
+    for (size_t k = 0; k < ptr->N+1; k++)
     {
 
     float func_x = std::pow(table_value[k]-2,2);
-        
     std::cout<<func_x<<std::endl;
     
+    if (func_x == 0.0)
+    {
+        result = table_value[k]; 
+        result_fx=func_x;
     }
     
+
+
+    }
     
+        std::cout<<"X min= "<<result<<"F(x)="<<result_fx<<std::endl;
+        // std::cout<<"F(x)="<<result_fx<<std::endl;
     
 }
 
@@ -109,8 +119,8 @@ int main()
         calculation_delta_N(p_data);
         // search_epslent(p_data);
         // std::cout<<"Это Расчётный Epselent "<<data.epsel<<std::endl;
-        calculation_func_x(p_data);
         std::cout<<"Это Расчётная дельта "<<data.calc_delta_N<<std::endl;
+        calculation_func_x(p_data);
         
         
         
