@@ -76,6 +76,6 @@ void calculation_func_x(struct data *ptr)
     }
     
         std::cout<<"X min= "<<result<<"F(x)="<<result_fx<<std::endl;
-        // std::cout<<"F(x)="<<result_fx<<std::endl;
+        std::cout<<"F(x)="<<result_fx<<std::endl;
     
 }
