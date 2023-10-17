@@ -3,6 +3,7 @@
 #include "func_x.h"
 #include <cmath>
 #include "dehotomy.h"
+#include <iomanip> 
 using namespace std;
 
 int change_method()
@@ -26,7 +27,7 @@ int main()
         struct data data;
 
         struct data *p_data = &data;
-        std::cout<<"Задайте интервал от [a,b]"<<std::endl;
+    
         around_struct(p_data);
         
         calculation_N(p_data);
